@@ -1,6 +1,6 @@
 # 🔧 KaamWala - Local Worker Marketplace
 
-> **काम ढूंढो, काम दो** | Find Work, Give Work
+| Find Work, Give Work
 
 KaamWala ek MERN stack platform hai jo plumbers, electricians, housekeeping staff, carpenters, drivers aur cooks ko employers se connect karta hai. Hindi + English support ke saath voice commands bhi hain!
 
