@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 const translations = {
   hi: {
-    appName: 'कामवाला',
+    appName: 'रोजगारX',
     tagline: 'काम ढूंढो, काम दो',
     home: 'होम',
     search: 'खोजें',
@@ -64,7 +64,7 @@ const translations = {
     urgency: { normal: 'सामान्य', urgent: 'जल्दी', 'very-urgent': 'बहुत जल्दी' }
   },
   en: {
-    appName: 'KaamWala',
+    appName: 'RozgaarX',
     tagline: 'Find Work, Give Work',
     home: 'Home',
     search: 'Search',
