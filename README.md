@@ -4,7 +4,6 @@
 
 KaamWala ek MERN stack platform hai jo plumbers, electricians, housekeeping staff, carpenters, drivers aur cooks ko employers se connect karta hai. Hindi + English support ke saath voice commands bhi hain!
 
----
 ## ✨ Features
 
 - 🔍 **Smart Search** — Skill + City ke basis par kaamgar dhundhein
