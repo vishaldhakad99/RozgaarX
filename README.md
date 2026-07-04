@@ -109,7 +109,6 @@ FRONTEND_URL=http://localhost:3000
 npm run dev
 # ✅ "KaamWala Server running on port 5000" dikhna chahiye
 ```
-
 ### Step 3: Frontend Setup
 
 ```bash
