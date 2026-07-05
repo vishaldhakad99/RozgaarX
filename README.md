@@ -17,7 +17,8 @@ RozgaarX ek MERN stack platform hai jo plumbers, electricians, housekeeping staf
 - 📱 **Mobile Responsive** — Phone par bhi smooth experience
 - 🌐 **Hindi + English** — Language toggle button se switch karein
 
----
+
+
 ## 🗂️ Project Structure
 
 ```
