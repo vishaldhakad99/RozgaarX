@@ -20,7 +20,6 @@ const protect = async (req, res, next) => {
     return res.status(401).json({ success: false, message: 'Token invalid hai' });
   }
 };
-
 const authorize = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
