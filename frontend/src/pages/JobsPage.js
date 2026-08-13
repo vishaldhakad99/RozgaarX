@@ -99,6 +99,7 @@ const JobsPage = () => {
                         ⚡ {urgencyLabel[job.urgency]}
                       </span>
                     )}
+
                     {job.isBulkHiring && <span className="badge badge-blue">🏢 Bulk</span>}
                   </div>
                   <div style={{ color: '#666', fontSize: '0.9rem', display: 'flex', gap: 12, flexWrap: 'wrap' }}>
