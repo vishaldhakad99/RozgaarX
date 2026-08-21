@@ -5,6 +5,8 @@ const Job = require('../models/Job');
 const Worker = require('../models/Worker');
 const { protect } = require('../middleware/auth');
 
+
+
 // @POST /api/bookings - Create booking
 router.post('/', protect, async (req, res) => {
   try {
@@ -39,6 +41,9 @@ router.get('/my', protect, async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 });
+
+
+
 
 // @PUT /api/bookings/:id/status - Update booking status
 router.put('/:id/status', protect, async (req, res) => {
