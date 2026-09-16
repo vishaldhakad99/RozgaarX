@@ -5,8 +5,10 @@ import toast from 'react-hot-toast';
 const API = process.env.REACT_APP_API_URL || '/api';
 const AuthContext = createContext();
 
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(localStorage.getItem('kw_token'));
 
@@ -16,6 +18,7 @@ export const AuthProvider = ({ children }) => {
     if (token) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       fetchUser();
+      
     } else {
       setLoading(false);
     }
@@ -23,9 +26,11 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
+      
       const { data } = await axios.get('/auth/me');
       setUser({ ...data.user, workerProfile: data.workerProfile });
     } catch (error) {
+      
       localStorage.removeItem('kw_token');
       setToken(null);
     } finally {
@@ -34,6 +39,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (phone, password) => {
+    
     const { data } = await axios.post('/auth/login', { phone, password });
     localStorage.setItem('kw_token', data.token);
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
@@ -45,6 +51,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (formData) => {
     const { data } = await axios.post('/auth/register', formData);
     localStorage.setItem('kw_token', data.token);
+    
     axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`;
     setToken(data.token);
     setUser(data.user);
@@ -54,6 +61,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem('kw_token');
     delete axios.defaults.headers.common['Authorization'];
+    
     setToken(null);
     setUser(null);
     toast.success('Logout ho gaye! Phir milenge 👋');
@@ -62,6 +70,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={{ user, loading, login, register, logout, setUser, token }}>
       {children}
+  
     </AuthContext.Provider>
   );
 };
