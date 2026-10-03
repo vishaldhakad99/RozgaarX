@@ -17,6 +17,7 @@ const Navbar = () => {
 
   return (
     <nav style={navStyle}>
+    
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
         {/* Logo */}
         <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -25,6 +26,8 @@ const Navbar = () => {
             {t.appName}
           </span>
         </Link>
+
+
 
         {/* Desktop Links */}
         <div style={{ display: 'flex', gap: 8, alignItems: 'center' }} className="hide-mobile">
@@ -42,10 +45,17 @@ const Navbar = () => {
             {lang === 'hi' ? 'EN' : 'हि'}
           </button>
 
+
+
           {user ? (
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               <Link to="/dashboard" style={{ textDecoration: 'none' }}>
                 <div style={{
+
+
+
+
+            
                   width: 36, height: 36, borderRadius: '50%',
                   background: '#FF6B35', color: 'white',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -60,10 +70,15 @@ const Navbar = () => {
             </div>
           ) : (
             <>
+
+            
               <Link to="/login" className="btn btn-sm btn-outline">{t.login}</Link>
               <Link to="/register" className="btn btn-sm btn-primary">{t.register}</Link>
             </>
           )}
+
+
+
 
           {/* Mobile menu */}
           <button onClick={() => setMenuOpen(!menuOpen)} style={{
