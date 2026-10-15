@@ -8,10 +8,15 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
+
   
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(localStorage.getItem('kw_token'));
 
+
+
+  
   axios.defaults.baseURL = API;
 
   useEffect(() => {
@@ -26,6 +31,9 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
+
+
+
       
       const { data } = await axios.get('/auth/me');
       setUser({ ...data.user, workerProfile: data.workerProfile });
@@ -37,7 +45,11 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     }
   };
+4
 
+
+
+  
   const login = async (phone, password) => {
     
     const { data } = await axios.post('/auth/login', { phone, password });
@@ -48,6 +60,8 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
+
+  
   const register = async (formData) => {
     const { data } = await axios.post('/auth/register', formData);
     localStorage.setItem('kw_token', data.token);
@@ -58,11 +72,18 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
+
+
+  
   const logout = () => {
     localStorage.removeItem('kw_token');
     delete axios.defaults.headers.common['Authorization'];
     
     setToken(null);
+
+
+
+    
     setUser(null);
     toast.success('Logout ho gaye! Phir milenge 👋');
   };
