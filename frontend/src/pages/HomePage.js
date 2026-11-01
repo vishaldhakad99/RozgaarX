@@ -3,20 +3,42 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 
+
+
+
 const SKILLS = [
   { key: 'plumber', icon: '🔧', hi: 'प्लंबर', en: 'Plumber' },
+
+
+
+  
   { key: 'electrician', icon: '⚡', hi: 'इलेक्ट्रीशियन', en: 'Electrician' },
   { key: 'housekeeping', icon: '🧹', hi: 'सफाई', en: 'Housekeeping' },
+
+
+  
   { key: 'carpenter', icon: '🪚', hi: 'बढ़ई', en: 'Carpenter' },
   { key: 'driver', icon: '🚗', hi: 'ड्राइवर', en: 'Driver' },
   { key: 'cook', icon: '👨‍🍳', hi: 'रसोइया', en: 'Cook' },
+
+
+  
 ];
 
 const STATS = [
   { number: '10,000+', hi: 'कामगार रजिस्टर्ड', en: 'Workers Registered' },
   { number: '500+', hi: 'शहर', en: 'Cities' },
+
+
+  
   { number: '50,000+', hi: 'काम पूरे हुए', en: 'Jobs Completed' },
+
+
+
+  
   { number: '4.8★', hi: 'औसत रेटिंग', en: 'Average Rating' },
+
+  
 ];
 
 const HomePage = () => {
@@ -30,6 +52,10 @@ const HomePage = () => {
     const params = new URLSearchParams();
     if (skill) params.set('skill', skill);
     if (city) params.set('city', city);
+
+
+
+    
     navigate(`/search?${params.toString()}`);
   };
 
@@ -39,6 +65,9 @@ const HomePage = () => {
       <section className="hero-gradient" style={{ padding: '60px 0 80px', position: 'relative', overflow: 'hidden' }}>
         {/* Background pattern */}
         <div style={{
+
+
+  
           position: 'absolute', inset: 0, opacity: 0.05,
           backgroundImage: 'repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)',
           backgroundSize: '20px 20px'
@@ -111,6 +140,8 @@ const HomePage = () => {
         <div className="container">
           <h2 style={{ textAlign: 'center', fontSize: '1.6rem', fontWeight: 700, marginBottom: 8 }}>
             {lang === 'hi' ? 'किस काम के लिए कामगार चाहिए?' : 'What kind of worker do you need?'}
+
+
           </h2>
           <p style={{ textAlign: 'center', color: '#666', marginBottom: 32 }}>
             {lang === 'hi' ? 'एक क्लिक में सही कामगार खोजें' : 'Find the right worker in one click'}
